@@ -1,4 +1,4 @@
-# Package to test PMU#
+# Package to test PMU #
 
 ## Author ##
 * Heverton de Lemos
@@ -46,7 +46,7 @@ xxxx
      - pmu_reference_ramp_freq_dynamic()
      - pmu_reference_step_change_dynamic()
 
-   * steady_state;
+   * steady_state:
      - frequency_steady()
      - harmonic_steady()
      - magnitude_steady()
@@ -57,15 +57,15 @@ xxxx
      - pmu_reference_out_of_band_steady()
      - ss_filter_samples_mono_ph()
      - ss_filter_samples_three_ph()
-     - ss_generic();
+     - ss_generic()
 
- * c37118.2;
+ * c37118.2:
    - generate_command_frame()
    - read_cfg()
    - read_data()
    - read_header()
 
- * data;
+ * data:
 
 ### Description: ###
 * communication: Module that contain all functions about communication, the module abstract the socket functions to user.
