@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% <Description>.
+% Usage: socket = connect_socket(local_port, send_ip, send_port)
 %
 % local_port= local port to open the socket;
 % send_ip= addres ip to send data;
@@ -8,6 +8,8 @@
 %
 % Return
 % socket: socket number to comunication or -1 if connection fail.
+%  
+% <Description>.
 %
 %  Heverton de Lemos 16/10/2017
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
