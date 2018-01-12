@@ -28,6 +28,7 @@ send_command(sock, send_data_command);
 printf("Press 's' to stop befeore the test starts...\n");
 fflush (stdout);
 nominal_voltage = 115; % Voltage in V
+nominal_current = 5; % CUrrent in A
 
 while (1)
   if (kbhit (1) == 's')
@@ -71,6 +72,20 @@ while (1)
 endwhile
 
 printf("All the data was acquired, please wait the results...\n");
-fflush (stdout);
-
+fflush(stdout);
+initial_frequency = 40; % Hz
+delta_frequency = 2; % Hz
+time_per_step = 2; % s
+number_of_steps = ((initial_frequency - 60) / delta_frequency) + 1;
+frames_per_second = 200;
+reference_phasors = struct();
+tmp_phasor = pmu_reference_1ph_freq_delta_freq(nominal_voltage,
+                                                initial_frequency,
+                                                delta_frequency,
+                                                number_of_steps,
+                                                time_per_step,
+                                                frames_per_second,
+                                                0);
+reference_phasors = tmp_phasor;
+measured_phasors = convert_to_struct(test_data);
 disconnect_socket(sock);
