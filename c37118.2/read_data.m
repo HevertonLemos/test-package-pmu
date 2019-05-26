@@ -1,5 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
+% Usage: data = read_data(frame_data, frame_size, cfg)
+% 
 % Generate the data struct IEEE C37.118-2.
 %
 % frame_dat = frame of the data received;
@@ -17,8 +19,8 @@ function data = read_data(frame_data, frame_size, cfg)
   data.("frame_size") = typecast( fliplr(frame_data(3:4)), "uint16" );
   data.("idcode") = typecast(fliplr(frame_data(5:6)), "uint16");
   data.("soc") = ctime( typecast( fliplr(frame_data(7:10)), "uint32" ));
-  data.("fracsec") = typecast( fliplr([frame_data(11) frame_data(12) frame_data(13) uint8(0)]), "single" ) / typecast( cfg.time_base, "single" );
-  data.("time_quality") = frame_data(14);
+  data.("fracsec") = typecast(fliplr([uint8(0) frame_data(12) frame_data(13) frame_data(14)]), "single") / typecast( cfg.time_base, "single" );
+  data.("time_quality") = frame_data(11);
   data.("stat") = typecast( fliplr(frame_data(15:16)), "uint16" );
 
   x = 1;

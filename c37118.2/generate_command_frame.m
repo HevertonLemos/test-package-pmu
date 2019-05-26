@@ -1,5 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
+% Usage: commands = generate_command_frame(idcode, cmd)
+%
 % Generate the command frame (IEEE C37.118-2).
 %
 % idcode = identifier of the script;

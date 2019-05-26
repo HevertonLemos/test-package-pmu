@@ -1,5 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
+% Usage: cfg = read_cfg(frame_cfg, frame_size)
+%
 % Generate the cfg struct IEEE C37.118-2.
 %
 % frame_cfg = frame of the cfg received;

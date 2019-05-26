@@ -2,20 +2,22 @@
 %
 % Performed the data received to PMU struct for tests.
 %
+% Usage: phasors = convert_to_struct(struct_received)
+%
 % struct_received = list of the frames received of the PMU about test;
 %
 % Return
-% phase: struct of the PMU to tests.
+% phasors: struct of the PMU to tests.
 %
 %  Heverton de Lemos 13/10/2017
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-function phase = convert_to_struct(struct_received)
+function phasors = convert_to_struct(struct_received)
 
   VS1 = VC = VB = VA = [];
   IS1 = IC = IB = IA = [];
 
   for i=1:length(struct_received)
-    pmu = getfield(struct_received{i}.pmu, '1');
+    pmu = getfield(struct_received(i).pmu, '1');
 
     VA(1,i) = pmu.phasors{1}(1);
     VA(2,i) = pmu.phasors{1}(2);
@@ -39,17 +41,17 @@ function phase = convert_to_struct(struct_received)
     rocof(i) = pmu.dfreq;
   endfor
 
-  phase = struct();
-  phase.("VA") = VA;
-  phase.("VB") = VB;
-  phase.("VC") = VC;
-  % phase.("VS1") = VS1;
-  % phase.("IA") = IA;
-  % phase.("IB") = IB;
-  % phase.("IC") = IC;
-  % phase.("IS1") = IS1;
-  phase.("frequency") = freq;
-  phase.("rocof") = rocof;
+  phasors = struct();
+  phasors.("VA") = VA;
+  phasors.("VB") = VB;
+  phasors.("VC") = VC;
+  % phasors.("VS1") = VS1;
+  % phasors.("IA") = IA;
+  % phasors.("IB") = IB;
+  % phasors.("IC") = IC;
+  % phasors.("IS1") = IS1;
+  phasors.("frequency") = freq;
+  phasors.("rocof") = rocof;
 
   return;
 endfunction

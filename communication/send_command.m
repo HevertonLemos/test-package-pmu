@@ -1,9 +1,11 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
+% Usage: send_command(socket, data)
+%
 % UDP socket for sending frames.
 %
-% socket= socket open to send frame.
-% data= frame to send.
+% socket = socket open to send frame.
+% data = frame to send.
 %
 % Return
 %
